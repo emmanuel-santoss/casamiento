@@ -326,9 +326,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    gap: 1.8rem;
     text-align: center;
-    padding: 2.5rem 1.25rem;
+    padding: 2.5rem 1.25rem calc(1.8rem + env(safe-area-inset-bottom));
     box-sizing: border-box;
     overflow: hidden;
     background-color: #14110d;
@@ -367,18 +368,15 @@
   .portada-text{
     font-family: var(--script);
     color:#fff;
-    font-size: clamp(2.2rem, 9vw, 3.8rem);
-    max-width: 100%;
-    margin: 0;
-    position: relative;
-    top: 10px;
-    line-height: 1;
+    font-size: clamp(2.1rem, 8.5vw, 3.6rem);
+    max-width: 16ch;
+    margin: 0 auto;
+    line-height: 1.12;
     text-shadow: 0 2px 20px rgba(0,0,0,.6);
   }
   .portada-scroll{
-    position:absolute;
-    left:50%; bottom: calc(1.4rem + env(safe-area-inset-bottom));
-    transform: translateX(-50%);
+    position:relative;
+    width:100%;
     z-index:2;
     display:flex; flex-direction:column; align-items:center; gap:.3rem;
     color:#fff; text-decoration:none;
@@ -417,8 +415,8 @@
   .music-toggle:not(.paused) .icon-off{ display:none; }
   .music-toggle.paused .icon-on{ display:none; }
   @keyframes portada-bob{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
-  @media (orientation: portrait){ #portada::before{ background-position: 40% 25%; } .portada-inner{ transform: translateY(calc(19vh + 80px)); } }
-  @media (orientation: landscape){ #portada::before{ background-position: 44% 18%; } .portada-inner{ transform: translateY(220px); } }
+  @media (orientation: portrait){ #portada::before{ background-position: 40% 25%; } }
+  @media (orientation: landscape){ #portada::before{ background-position: 44% 18%; } }
 
   /* ===== Código de acceso (sobre la portada) ===== */
   .portada-gate{ width:min(360px, 86vw); }
