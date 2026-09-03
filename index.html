@@ -522,7 +522,7 @@
       <form class="code-form" id="codeForm" autocomplete="off" novalidate>
         <label class="code-label" for="codeInput">Ingresá tu código de invitación</label>
         <div class="code-row">
-          <input id="codeInput" class="code-input" type="text" inputmode="text" autocapitalize="characters" spellcheck="false" placeholder="Ej: FAM001" aria-describedby="codeError">
+          <input id="codeInput" class="code-input" type="text" inputmode="text" autocapitalize="characters" spellcheck="false" placeholder="Tu código" aria-describedby="codeError">
           <button type="submit" class="code-btn">Entrar</button>
         </div>
         <p class="code-error" id="codeError" role="alert" hidden>No encontramos ese código. Revisalo e intentá de nuevo.</p>
@@ -558,15 +558,14 @@ document.addEventListener('DOMContentLoaded', function(){
   var target=document.getElementById('invitacion');
 
   /* =========================================================
-     LISTA DE INVITADOS (código de acceso)
-     Agregá acá cada familia/grupo. El código puede ser lo que
-     quieras (ej: FAM001). "invitados" es la cantidad de lugares.
-     Estos 3 son de EJEMPLO para probar; reemplazalos por los reales.
+     CÓDIGO DE ACCESO (único y genérico)
+     Hay UN solo código que se comparte con todos los invitados.
+     Para cambiarlo, editá la clave de abajo (se compara en MAYÚSCULAS,
+     sin espacios). `nombre` e `invitados` se dejan vacíos/0 a propósito
+     (no mostramos saludo ni "lugares reservados" con código único).
      ========================================================= */
   var INVITADOS = {
-    "FAM001": { nombre: "Familia Pérez",  invitados: 4 },
-    "FAM002": { nombre: "Lucía y Martín", invitados: 2 },
-    "DEMO":   { nombre: "Invitado",       invitados: 2 }
+    "SOFIEMMA": { nombre: "", invitados: 0 }
   };
   // En true muestra un link "No tengo código · entrar igual" (entra sin saludo).
   // En false el código es OBLIGATORIO: sólo entra quien tenga un código válido.
